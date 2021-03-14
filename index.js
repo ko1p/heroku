@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const PORT = process.env.PORT || 80;
+
 app.get('/', (req, res) => {
     res.send(`
     <ul>
@@ -30,6 +32,6 @@ app.get('/about', (req, res) => {
 `)
 })
 
-app.listen(80, () => {
-    console.log('Server started!')
+app.listen(PORT, () => {
+    console.log('Server started! on ', PORT)
 })
