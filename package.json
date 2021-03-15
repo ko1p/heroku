@@ -1,24 +1,18 @@
 {
-  "name": "heroku",
+  "name": "superkassa-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "test case",
   "main": "index.js",
+  "author": "Anton Bel'ko",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index"
+    "start": "nodemon ./index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ko1p/heroku.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ko1p/heroku/issues"
-  },
-  "homepage": "https://github.com/ko1p/heroku#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.1"
   }
 }

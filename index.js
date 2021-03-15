@@ -1,37 +1,13 @@
-const express = require('express');
+const {PORT} = require('./config.js');
+const app = require('express')();
+const http = require('http').createServer(app);
+const socket = require('./socket/socket');
+const bodyParser = require('body-parser');
 
-const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+socket(http);
 
-const PORT = process.env.PORT || 80;
-
-app.get('/', (req, res) => {
-    res.send(`
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-    </ul>
-    <h2>Home page</h2>
-`)
-})
-
-app.get('/about', (req, res) => {
-    res.send(`
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-    </ul>
-    <h2>About page</h2>
-`)
-})
-
-app.listen(PORT, () => {
-    console.log('Server started! on ', PORT)
-})
+http.listen(PORT, () => {
+    console.log(`Сервер запустился на ${PORT} порте.`)
+});
