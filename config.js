@@ -1,1 +1,1 @@
-module.exports.PORT = 3000; // порт на котором будет работать сервер
+module.exports.PORT = process.env.PORT || 3000; // порт на котором будет работать сервер
